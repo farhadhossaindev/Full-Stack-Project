@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { client } from "../lib/Sanity";
+import { client } from "../lib/sanity";
 import { useContext } from "react";
 
 
