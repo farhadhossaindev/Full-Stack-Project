@@ -14,7 +14,6 @@ import { useProductContext } from '../contextApi/allData';
 
 function SliderCat() {
     const { category } = useProductContext()
-    console.log(category)
     return (
         <div className='mx-10'>
             <Swiper
