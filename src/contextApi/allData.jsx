@@ -13,8 +13,9 @@ export function ProductData({children}) {
 
     const getAllProduct= async () =>{
         setLoding(true)
-        const product= await client.fetch('*[_type=="shop"]{_id, ProductNane, ProductPrice,  "imageUrl": img.asset->url, Category->{CategoryNane}}')
+        const product= await client.fetch('*[_type=="shop"]{_id, ProductNane, ProductPrice, Category->{CategoryNane},  "imageUrl": img.asset->url,}')
         setLoding(false)
+        console.log(product)
         return allProduct(product)
     }
 
