@@ -3,12 +3,14 @@ import Layout from "../Layout/Layout";
 import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 import { useProductContext } from "../contextApi/allData";
-import Lodaing from "../Component/lodaing";
+import LoadingFarhad from "../Component/LoadingFarhad";
+
+
 
 
 
 function Shop() {
-  const { product, loding, category, getUserSearchData } = useProductContext()
+  const { product, loadingFarhad, category, getUserSearchData } = useProductContext()
 
   return (
     <Layout title={"Shop"} >
@@ -28,7 +30,7 @@ function Shop() {
 
 
           {
-            loding ? <Lodaing /> : <>
+            loadingFarhad ? <LoadingFarhad /> : <>
               {
                 product.map(product => <ProductCard key={product._id} productInfo={product} />)
               }

@@ -9,13 +9,12 @@ export function ProductData({children}) {
     const [product, allProduct] = useState([])
     const [category, allCatagory] = useState([])
     //loding state
-    const [loding, setLoding] = useState([])
+    const [loadingFarhad, setLoadingFarhad] = useState([])
 
     const getAllProduct= async () =>{
-        setLoding(true)
+        setLoadingFarhad(true)
         const product= await client.fetch('*[_type=="shop"]{_id, ProductNane, ProductPrice, Category->{CategoryNane},  "imageUrl": img.asset->url,}')
-        setLoding(false)
-        console.log(product)
+        setLoadingFarhad(false)
         return allProduct(product)
     }
 
@@ -48,7 +47,7 @@ export function ProductData({children}) {
 
 
 
-return <productContext.Provider value={{product, category, loding, getUserSearchData}}>
+return <productContext.Provider value={{product, category, loadingFarhad, getUserSearchData}}>
     {children}
 </productContext.Provider>
 

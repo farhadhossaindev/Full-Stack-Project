@@ -11,7 +11,6 @@ function Productdetailes() {
     const { ProductNane, ProductPrice,Category, desc, imageUrl } = product
     const { id } = useParams()
 
-    console.log(product)
 
     const query = `*[_type=="shop" && _id=="${id}"]{_id, ProductNane, ProductPrice, desc, "imageUrl": img.asset->url, Category->{CategoryNane}}
     `
